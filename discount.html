@@ -19,7 +19,7 @@
     <input type="button" onclick= "discount()" value="Apply discount">
     <br>
 
-<p id= "res">The discount</p>
+<p id= "res">Result</p>
 
 <script> 
 function discount()
@@ -38,7 +38,43 @@ function discount()
 }
 </script>
 
+<form>
+    <input type="radio" value="times" id ="times" onclick="chooseOp()">
+    <label for="times">*</label></br>
+    <input type="radio" value="divide" id ="divide" onclick="chooseOp()">
+    <label for="times">/</label></br>
+    <input type="radio" value="exponent" id ="exponent" onclick="chooseOp()">
+    <label for="times">**</label></br>
+</form>
+<p id= "result"></p>
+<script>
+    function chooseOp(){
+        amount = document.getElementById("base_amount").value;
+        i_discount = document.getElementById("input_discount").value;
 
+        if (document.getElementById("times").checked == true){
+            document.getElementById("divide").checked = false;
+            document.getElementById("exponent").checked = false;
+            res = amount * i_discount
+            t_result= "Multiplication of " + amount + " and " + i_discount + " is " + res 
+        }
+        else if (document.getElementById("divide").checked == true){
+            document.getElementById("times").checked = false;
+            document.getElementById("exponent").checked = false;
+            res = amount / i_discount
+            t_result= "Division of " + amount + " and " + i_discount + " is " + res
+        }
+        else if (document.getElementById("exponent").checked == true){
+            document.getElementById("divide").checked = false;
+            document.getElementById("times").checked = false;
+            res = amount ** i_discount
+            t_result= "Exponent of " + amount + " and " + i_discount + " is " + res
+        }
+        console.log(res)
+        out = document.getElementById("res")
+        out.innerHTML = t_result 
+    }
+</script>
 
 </body>
 </html> 
