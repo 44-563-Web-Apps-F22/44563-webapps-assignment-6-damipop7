@@ -53,7 +53,14 @@ function selectVacation(){
         out.innerHTML = JSON.stringify(my_vacation)
 }
 
-
+function updateVacation(){
+    city = document.getElementById("city").value;
+    price = document.getElementById("price").value;
+    my_vacation["city"] = city
+    my_vacation["price"] = price
+    out = document.getElementById("result")
+    out.innerHTML = JSON.stringify(my_vacation)
+}
 </script>
 </body>
 </html> 
