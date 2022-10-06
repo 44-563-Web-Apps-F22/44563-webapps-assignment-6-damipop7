@@ -41,6 +41,13 @@ function checkGuess(){
         alert("Wrong Musician")
         wrong += 1
         out.innerHTML = ("Wrong Musician " + wrong + " times")
+
+        if (wrong => 3){
+            function wrong(){
+                alert("Sorry, game over")
+                out.innerHTML = "Game over"
+            }
+        }
     }
 }
 </script>
