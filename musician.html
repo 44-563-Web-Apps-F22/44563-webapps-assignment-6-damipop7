@@ -45,8 +45,9 @@ function checkGuess(){
         if (wrong => 3){
             function w_n(){
                 alert("Sorry, game over")
-                out.innerHTML = "Game over"
+                return "Game over";
             }
+            return w_n();
         }
     }
 }
